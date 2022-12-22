@@ -205,11 +205,11 @@
 								<span class="title02" name="ticketName2">이용시간:
   									<select name="ticketName" >
    						 				<option value="none" name="usingTIME">=== 선택 ===</option>
-   						 				<option value="1" selected>1시간</option>
-    					 				<option value="2">2시간</option>
-    									<option value="4">4시간</option>
-    								    <option value="6">6시간</option>
-    					 				<option value="8">8시간</option>
+   						 				<option value="1" selected>1시간 - 2,000p</option>
+    					 				<option value="2">2시간 - 3,000p</option>
+    									<option value="4">4시간 - 5,000p</option>
+    								    <option value="6">6시간 - 6,000p</option>
+    					 				<option value="8">8시간 - 7,000p</option>
  					 				</select>
 								</span>
 							</td>
@@ -220,7 +220,7 @@
 										<select name="selectedTime" >
    						 				<option value="none" name="startTIME">=== 선택 ===</option>
    						 					<c:forEach begin="8" end="23" step="1" var="t">
-    					 						<option name="selectTime">${t}:00 ~ ${t+1}:00</option>
+    					 						<option name="selectTime" value="a${t}">${t}:00 ~ ${t+1}:00</option>
     									 	</c:forEach>
  					 				</select>
 										

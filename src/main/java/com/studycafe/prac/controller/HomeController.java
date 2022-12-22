@@ -21,6 +21,14 @@ public class HomeController {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	
+	@RequestMapping(value="/testpage")//이용금액표
+	public String testpage() {
+		
+		
+		return "testpage";
+	}
+	
 	@RequestMapping(value="/loginpage")//이용금액표
 	public String loginpage() {
 		
@@ -91,6 +99,12 @@ public class HomeController {
 	}
 	@RequestMapping(value="/SubscriptionTicketView")//이용금액표
 	public String STicketView() {
+		
+		
+		return "SubscriptionTicketView";
+	}
+	@RequestMapping(value="/BuySubscription")//이용금액표
+	public String BuySTicket() {
 		
 		
 		return "SubscriptionTicketView";

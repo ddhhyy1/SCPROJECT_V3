@@ -64,7 +64,7 @@ $(function(){
 									<tr>
 										<td><span class="content_text01" name="userId">아 이 디 : </span></td>
 										<td>
-										
+										<input type="text" name="userId">
 										</td>
 									</tr>
 									</tr>
@@ -84,7 +84,7 @@ $(function(){
 										<td>
 										<div class="btn-group" role="group" aria-label="Basic outlined example">
 
-  											<div class="change50"><button type="button" id= "change50" class="btn btn-outline-primary" name="50">
+  											<div class="change50"><button type="button" class="btn btn-outline-primary" name="50">
   											50시간</button></div>
   											<div class="change100">
  											<button type="button" id= "change100" class="btn btn-outline-primary" name="100">100시간</button>
@@ -102,10 +102,10 @@ $(function(){
 										</td>
 									</tr>
 										<tr>
-										<td><span class="content_text01" name=>차감포인트 : </span>
+										<td><span class="content_text01" >차감포인트 : </span>
 										</td>
 										<td >
-        								<input class = "change50s" type="text" name="STicketHour" value="0">
+        								<input type="text" name="STicketHour" value="0">p
 										</td>
 									</tr>
 										</tr>
@@ -117,7 +117,7 @@ $(function(){
 									</tr>
 									<tr>
 										<td colspan="2">
-											<input class="button_type01" type="button" value="결제하기" onclick="script:window.location='memberModify'">&nbsp;&nbsp;
+											<input class="button_type01" type="submit" value="결제하기">&nbsp;&nbsp;
 											<input class="button_type01" type="button" value="뒤로" onclick="window.history.back() ">
 										</td>
 									</tr>
