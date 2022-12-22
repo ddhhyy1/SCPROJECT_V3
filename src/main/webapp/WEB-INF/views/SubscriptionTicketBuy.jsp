@@ -7,32 +7,28 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/content.css">
 <meta charset="UTF-8">
 <title>시간권 구매</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
 <script type="text/javascript">
-$(document).ready( function(){
-		$("#change50").click(function() {
-		
-			$('.change50s').text("65,000");
-		});
-		});
-$(document).ready( function(){
-	$("#change100").click(function() {
-	
-		$('.change50s').text("120,000");
-	});
-	});
-$(document).ready( function(){
-	$("#change150").click(function() {
-	
-		$('.change50s').text("160,000");
-	});
-	});
-$(document).ready( function(){
-	$("#change200").click(function() {
-	
-		$('.change50s').text("200,000");
-	});
-	});
+$(function(){
+    $('.change50').click(function(){
+    	$('input[name=STicketHour]').attr('value',"65,000");
+    });
+});
+$(function(){
+    $('.change100').click(function(){
+    	$('input[name=STicketHour]').attr('value',"120,000");
+    });
+});
+$(function(){
+    $('.change150').click(function(){
+    	$('input[name=STicketHour]').attr('value',"160,000");
+    });
+});
+$(function(){
+    $('.change200').click(function(){
+    	$('input[name=STicketHour]').attr('value',"200,000");
+    });
+});
 </script>
 </head>
 <body>
@@ -87,10 +83,18 @@ $(document).ready( function(){
 									<tr>
 										<td>
 										<div class="btn-group" role="group" aria-label="Basic outlined example">
-  											<button type="button" id= "change50" class="btn btn-outline-primary" name="50">50시간</button>
+
+  											<div class="change50"><button type="button" id= "change50" class="btn btn-outline-primary" name="50">
+  											50시간</button></div>
+  											<div class="change100">
  											<button type="button" id= "change100" class="btn btn-outline-primary" name="100">100시간</button>
+  											</div>
+  											<div class="change150">
   											<button type="button" id= "change150" class="btn btn-outline-primary" name="150">150시간</button>
+   											</div>
+   											<div class="change200">
    											<button type="button" id= "change200" class="btn btn-outline-primary" name="200">200시간</button>
+											</div>
 										</div>
 										</td>
 										<td>
@@ -100,7 +104,7 @@ $(document).ready( function(){
 										<tr>
 										<td><span class="content_text01" name=>차감포인트 : </span>
 										</td>
-										<td class = "change50s">
+										<td >
         								<input class = "change50s" type="text" name="STicketHour" value="0">
 										</td>
 									</tr>
