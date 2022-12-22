@@ -74,43 +74,7 @@
 
 </script>
 
-	<!-- 테이블 ROW 클릭시 값 가져오는 JS -->
-<script>
-    $("#example-table-1 tr").click(function(){     
-        var str = ""
-        var tdArr = new Array();    // 배열 선언
-            
-        // 현재 클릭된 Row(<tr>)
-        var tr = $(this);
-        var td = tr.children();
-            
-        // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
-            
-        // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
-        td.each(function(i){
-            tdArr.push(td.eq(i).text());
-        });
-            
-        console.log("배열에 담긴 값 : "+tdArr);
-            
-        // td.eq(index)를 통해 값을 가져올 수도 있다.
-        var no = td.eq(0).text();
-        var userid = td.eq(1).text();
-        var name = td.eq(2).text();
-        var email = td.eq(3).text();
-            
-            
-        str += " * 클릭된 Row의 td값 = No. : <font color='red'>" + no + "</font>" +
-               ", 아이디 : <font color='red'>" + userid + "</font>" +
-               ", 이름 : <font color='red'>" + name + "</font>" +
-               ", 이메일 : <font color='red'>" + email + "</font>";        
-          
-        $("#ex1_Result1").html(" * 클릭한 Row의 모든 데이터 = " + tr.text());        
-        $("#ex1_Result2").html(str);
-    });    
-	<!-- 테이블 ROW 클릭시 값 가져오는 JS 끝-->
-</script>
+
 <meta charset="UTF-8">
 <title>당일권 사용&예약등록</title>
 </head>
@@ -154,13 +118,13 @@
 			<td>
 				<center>
 					<div class="row">
-						<table id="example-table-1"  width="80%" border="1" cellspacing="0" cellpadding="10"
-						class="table table-bordered table-hover text-center">
+						<table id="example-table-1"  width="80%" border="1" cellspacing="1" cellpadding="10"
+						>
 							<thead>
 									<tr>
 										<th>시간</th>
 										<th>가능여부</th>
-										<th>매장지도</th>
+										<th>현재 이용 가능 좌석</th>
 									</tr>
 							</thead>
 							<tbody>
@@ -171,12 +135,68 @@
 										<img src="${pageContext.request.contextPath }/resources/img/cafemap.png" width="700">
 									</td>
 									</tr>
-					    				 <c:forEach begin="9" end="23" step="1" var="i">		 
 									<tr>
-										<td class="skillbox" >${i }:00 ~ ${i+1}:00</td>
+										<td class="skillbox" >9:00 ~ 10:00</td>
 										<td class="skillbox" >사용&예약 가능</td>
 									</tr>
-							</c:forEach>
+									<tr>
+										<td class="skillbox" >10:00 ~ 11:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >11:00 ~ 12:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >12:00 ~ 13:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >13:00 ~ 14:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >14:00 ~ 15:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >15:00 ~ 16:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >16:00 ~ 17:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >17:00 ~ 18:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >18:00 ~ 19:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >19:00 ~ 20:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >20:00 ~ 21:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >21:00 ~ 22:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >22:00 ~ 23:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+									<tr>
+										<td class="skillbox" >23:00 ~ 24:00</td>
+										<td class="skillbox" >사용&예약 가능</td>
+									</tr>
+							
+							
 									
 							</tbody>
 				</table>
@@ -200,7 +220,7 @@
 										<select name="selectedTime" >
    						 				<option value="none" name="startTIME">=== 선택 ===</option>
    						 					<c:forEach begin="8" end="23" step="1" var="t">
-    					 						<option name="selectTime">${t}:00</option>
+    					 						<option name="selectTime">${t}:00 ~ ${t+1}:00</option>
     									 	</c:forEach>
  					 				</select>
 										
@@ -209,7 +229,7 @@
 							</tr>
 							<tr>
 										<td colspan="3">
-											<input class="button_type01" type="submit" value="바로시작" >&nbsp;&nbsp;
+											
 											<input class="button_type01" type="button" value="예약하기" onclick="script:window.location='QuestionList'">
 											<input class="button_type01" type="button" value="뒤로" onclick="window.history.back() ">
 										</td>

@@ -83,4 +83,16 @@ public class HomeController {
 		
 		return "registTodayConfirm";
 	}
+	@RequestMapping(value="/SubscriptionTicketBuy")//이용금액표
+	public String STicketBuy() {
+		
+		
+		return "SubscriptionTicketBuy";
+	}
+	@RequestMapping(value="/SubscriptionTicketView")//이용금액표
+	public String STicketView() {
+		
+		
+		return "SubscriptionTicketView";
+	}
 }

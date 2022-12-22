@@ -59,7 +59,9 @@
 										</td>
 										<td align="center">
 										<div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
-  											<div class="card-header">시간권 구매</div>
+  											<div class="card-header">
+  												<a href="SubscriptionTicketBuy">시간권 구매</a>
+  											</div>
   												<div class="card-body">
    												   <h5 class="card-title">긴 시간을 나눠서 이용할 때!</h5>
     												<p class="card-text"></p>
